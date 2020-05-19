@@ -11,18 +11,19 @@ const Dialogs = (props) => {
         { id: 3, name: "Ugor" },
         { id: 4, name: 'Dany' },
         { id: 5, name: "Emma" },
-    ];
-    let dialogsElements = dialogsData
-
-        .map(dialog => <DialogsItem name={dialog.name} id={dialog.id} />);
+    ]
     let messagesData = [
         { id: 1, message: "Oh, baby, baby" },
         { id: 2, message: "How was I supposed to know " },
         { id: 3, message: "That something wasn't right here?" },
         { id: 4, message: "I shouldn't have let you go" },
         { id: 5, message: "And now you're out of sight, yeah" },
-    ];
+    ]
+    let dialogsElements = dialogsData.map(dialog => <DialogsItem name={dialog.name} id={dialog.id} />);
+
     let messagesElements = messagesData.map(message => <Message  id={message.id} message={message.message} />)
+
+    
     return (
 
 
