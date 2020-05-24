@@ -12,3 +12,14 @@
 .item .active {
     color: gold;
 }
+.friends {
+    padding-top: 80px;
+    font-size: 35px;
+    font-family: initial;
+}
+.friendsItem {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    padding-top: 30px;
+}
