@@ -3,13 +3,14 @@ import React from 'react';
 import MyPosts from './MyPosts/MyPosts';
 import ProfileInfo from './ProfileInfo/Profileinfo';
 
-const Profile = () => {
+const Profile = (props) => {
+
   return (
     <div >
 
       <ProfileInfo />
 
-      <MyPosts />
+      <MyPosts post={props.post} />
     </div>
   )
 }
