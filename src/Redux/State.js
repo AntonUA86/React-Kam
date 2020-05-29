@@ -43,7 +43,7 @@ window.state = state;
       likesCount:0
    };
    state.profilePage.post.push(newPost);
-   state.profilePage.newPostText = '';
+   state.profilePage.newPostText = "";
    renderEntireTree(state);
 }
 export let updateNewPostText  = (newText) =>{
