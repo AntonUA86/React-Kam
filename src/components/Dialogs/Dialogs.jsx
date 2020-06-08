@@ -1,38 +1,23 @@
 import React from 'react';
-import s from './Dialogs.module.css'
-import Message from './Message/Message'
-import DialogsItem from './DialogItem/DialogsItem'
-
+import s from './Dialogs.module.css';
+import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Message/Message";
 
 const Dialogs = (props) => {
-  
-    let dialogsElements = props.state.dialogsData.map(dialog => <DialogsItem name={dialog.name} id={dialog.id} />);
 
-    let messagesElements = props.state.messagesData.map(message => <Message  id={message.id} message={message.message} />)
-    let newDialogsElement = React.createRef();
-    let addText = () => {
-        let text = newDialogsElement.current.value;
-        alert(text);
-    }
-    
+    let dialogsElements = props.state.dialogs.map( d => <DialogItem name={d.name} id={d.id} />  );
+    let messagesElements = props.state.messages.map( m => <Message message={m.message}/> );
+
     return (
-
-
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                {dialogsElements}
-            </div>
-            <div>
-                <textarea ref={newDialogsElement}></textarea>
-                <button onClick={addText}>Add post</button>
+                { dialogsElements }
             </div>
             <div className={s.messages}>
-                {messagesElements}
-
+                { messagesElements }
             </div>
         </div>
     )
-
 }
 
 export default Dialogs;
