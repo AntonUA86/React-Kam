@@ -54,7 +54,6 @@ class UsersContainer extends React.Component {
     );
   }
 }
-
 let mapStateToProps = (state) => {
   return {
     users: state.usersPage.users,
@@ -65,7 +64,6 @@ let mapStateToProps = (state) => {
     followingInProgress: state.usersPage.followingInProgress,
   };
 };
-
 // let mapDispatchToProps = (dispatch) => {
 //   return {
 //     follow: (userId) => {
@@ -88,7 +86,6 @@ let mapStateToProps = (state) => {
 //     },
 //   };
 // };
-
 export default connect(mapStateToProps, {
   follow,
   unfollow,
