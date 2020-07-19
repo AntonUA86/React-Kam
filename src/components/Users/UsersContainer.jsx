@@ -13,6 +13,8 @@ import {
   toggleIsFetching,
   followingInProgress,
 } from "../../redux/usersReducer";
+import { compose } from "redux";
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 
 class UsersContainer extends React.Component {
   componentDidMount() {
@@ -86,12 +88,16 @@ let mapStateToProps = (state) => {
 //     },
 //   };
 // };
-export default connect(mapStateToProps, {
-  follow,
-  unfollow,
-  setUsers,
-  setCurrentPage,
-  setTotalUsersCount,
-  toggleIsFetching,
-  followingInProgress,
-})(UsersContainer);
+
+export default compose(
+  withAuthRedirect,
+  connect(mapStateToProps, {
+    follow,
+    unfollow,
+    setUsers,
+    setCurrentPage,
+    setTotalUsersCount,
+    toggleIsFetching,
+    followingInProgress,
+  })
+)(UsersContainer);
